@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Aura TV</string>
+    <string name="launcher_banner_title">Featured on Aura TV</string>
+    <string name="action_open">Open App</string>
+    <string name="action_favorite">Favorite</string>
+    <string name="action_unfavorite">Unfavorite</string>
+    <string name="action_hide">Hide App</string>
+    <string name="action_details">App Info</string>
+    <string name="category_favorites">Favorites</string>
+    <string name="category_streaming">Movies &amp; Shows</string>
+    <string name="category_games">Games</string>
+    <string name="category_music">Music &amp; Audio</string>
+    <string name="category_utilities">Tools &amp; Settings</string>
+    <string name="category_all">All Applications</string>
+    <string name="settings_title">Aura TV Settings</string>
+    <string name="wallpapers_title">Aerial Wallpapers</string>
+    <string name="pin_dialog_title">Enter Security PIN</string>
+    <string name="pin_dialog_subtitle">Protected Apps Vault</string>
+</resources>

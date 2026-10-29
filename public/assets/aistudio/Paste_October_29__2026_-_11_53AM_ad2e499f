@@ -1,0 +1,724 @@
+ULTIMATE MASTER PROMPT — PREMIUM CINEMATIC ANDROID TV LAUNCHER WITH DEPTH WALLPAPERS
+
+ROLE AND OBJECTIVE
+
+Act as a senior Android TV launcher developer, expert Kotlin and Jetpack Compose engineer, premium TV interface designer, wallpaper-rendering engineer, and Android application performance specialist.
+
+I already have an Android application project in this conversation. Its current interface is disappointing: the icons are poor, button labels are difficult to read, customization is limited, the wallpaper system is basic, movie banners are missing or unattractive, and the overall design does not look like a premium television operating system.
+
+I now want you to transform the existing application into a complete, beautiful, futuristic, premium Android TV launcher inspired by the cinematic quality of Apple TV, Google TV, modern smart televisions, and the depth-effect wallpaper experience seen on compatible smartphone lock screens.
+
+The new application must combine:
+
+1. Premium cinematic TV home screen.
+2. Beautiful depth-effect wallpapers.
+3. Large clock rendered behind a foreground wallpaper subject.
+4. Built-in depth wallpapers and selectable visual themes.
+5. Custom wallpaper importing.
+6. Excellent application icons and readable names.
+7. Beautiful movie-style banners and recommendation rows.
+8. Complete personalization settings.
+9. Excellent D-pad and TV remote navigation.
+10. Genuine Android application launching.
+11. Android Home launcher integration on compatible devices.
+12. Good performance on real Android TV hardware.
+
+THIS IS A COMPLETE PRODUCT REDESIGN, NOT A SMALL COLOR OR THEME CHANGE.
+
+Inspect the actual existing project first and then implement the redesign directly in its source code.
+
+Do not respond with only a proposal, a mockup, sample code, or a list of recommendations. Make the actual project changes using the tools and capabilities available in the current environment.
+
+Do not ask unnecessary questions. Use professional judgment and implement the best practical design.
+
+Preserve working features unless there is a clear reason to improve their implementation.
+
+Do not claim that functionality has been implemented or tested when it has not.
+
+---
+
+1. THE PRIMARY DESIGN: CINEMATIC DEPTH WALLPAPER HOME SCREEN
+
+THIS IS THE MOST IMPORTANT AND DISTINCTIVE FEATURE OF THE ENTIRE APPLICATION.
+
+The home screen must feature a premium depth-effect wallpaper at the top, with an impressive oversized clock visually positioned BEHIND the main subject of the wallpaper.
+
+The result should resemble a sophisticated depth-effect lock screen, redesigned appropriately for a widescreen Android TV.
+
+The wallpaper must not simply be a normal background image with a clock placed over it.
+
+It must use multiple visual layers to create a genuine foreground-over-clock depth effect.
+
+1.1 Exact layering structure
+
+Implement the wallpaper scene using independently rendered layers.
+
+The intended rendering order is:
+
+LAYER 1 — BACKGROUND WALLPAPER:
+
+- Display a beautiful, high-resolution cinematic background image.
+- Cover the wallpaper region appropriately.
+- Preserve the correct aspect ratio.
+- Crop the image intelligently for a 16:9 TV.
+- Avoid stretched or pixelated images.
+- Support a subtle gradient or dimming overlay where needed.
+
+LAYER 2 — LARGE DIGITAL CLOCK:
+
+- Render a large, premium digital clock over the background.
+- Position it near the upper-center or another compositionally suitable position.
+- Use attractive, modern typography.
+- Make the time large enough to be visually impressive from a distance.
+- Use a carefully chosen white, warm-white, or theme-compatible color.
+- Support subtle transparency or a tasteful shadow.
+- Keep the numbers readable against the image.
+- Allow the clock to sit visually behind the foreground subject.
+- Use a real system-backed time source and update it appropriately.
+- Never use a hardcoded demonstration time.
+
+LAYER 3 — FOREGROUND SUBJECT:
+
+- Render a transparent foreground cutout over the clock.
+- The foreground object must overlap the clock where the image composition allows.
+- The object should appear closer to the viewer than the time.
+- The clock must remain visible in uncovered areas around the subject.
+- The foreground layer must not cover the entire clock unnecessarily.
+- Preserve natural edges around the subject and avoid ugly halos.
+
+The correct visual stacking order is:
+
+BACKGROUND IMAGE → LARGE CLOCK → TRANSPARENT FOREGROUND SUBJECT.
+
+This layering order is essential.
+
+Use a suitable Jetpack Compose layered layout, custom drawing implementation, or other appropriate Android rendering technique. The final implementation must actually preserve this visual order.
+
+Do not simulate the effect by writing the clock into a flattened image.
+
+Do not create a static screenshot and pretend that it is a working wallpaper engine.
+
+1.2 Clock typography and appearance
+
+Create a dedicated clock design system with options such as:
+
+- Elegant thin typography.
+- Modern bold typography.
+- Minimalist typography.
+- Premium rounded typography.
+- White or warm-white clock colors.
+- Theme-compatible accent colors where appropriate.
+- Optional subtle shadows.
+- Adjustable clock size.
+- Adjustable clock position.
+- Optional date below or beside the time.
+
+Use available fonts legally and preserve proper font rendering.
+
+The clock must remain legible without destroying the foreground overlap effect.
+
+Avoid placing essential clock digits directly across the subject's face when the image composition can be improved.
+
+Make the clock responsive to different TV resolutions and aspect ratios.
+
+When the user switches to another wallpaper, update the clock composition according to the new wallpaper's metadata.
+
+1.3 Depth effect must be real
+
+A true foreground-over-clock effect requires appropriate foreground image data.
+
+Use paired wallpaper assets where possible:
+
+- A complete background image.
+- A separate transparent foreground PNG/WebP layer containing the foreground subject.
+- Optional metadata defining the clock position, subject position, and scaling.
+
+Use actual transparent foreground images with alpha channels.
+
+Do not place the complete original photograph over the clock, because doing so would hide the clock and defeat the depth effect.
+
+Do not use a rough rectangular cutout or an obvious hard-edged mask.
+
+If foreground masks or segmentation maps are used, render the actual subject with naturally preserved edges.
+
+Where supported by the existing environment, an appropriate local subject-segmentation system may be used to create depth layers from user images. Any such implementation must be genuine, sufficiently accurate, and efficient.
+
+Do not introduce a large machine-learning dependency blindly.
+
+Do not make a cloud service or API key mandatory just to display built-in wallpapers.
+
+If an ordinary imported photograph cannot be separated into suitable layers reliably, explain this limitation and offer a functional alternative: import a normal wallpaper or use a compatible transparent foreground image.
+
+Never fake the depth effect with a flattened image.
+
+---
+
+2. BUILT-IN DEPTH WALLPAPER LIBRARY
+
+Create a dedicated section called "Depth Wallpapers" within the launcher settings or personalization screen.
+
+This section is mandatory.
+
+The user must be able to browse built-in wallpapers, preview them, select one, apply it, and return to the previous wallpaper.
+
+Create a curated collection of attractive, original depth-wallpaper themes.
+
+Include a variety of visual styles, such as:
+
+1. Futuristic blue cinematic city.
+2. Purple and blue neon skyline.
+3. Mountains with atmospheric depth.
+4. Dark luxury architecture.
+5. Space and planets.
+6. Abstract glass and metallic shapes.
+7. Dramatic nature scenery.
+8. Minimalist luxury wallpaper.
+9. Premium black-and-gold abstract art.
+10. Cinematic futuristic landscape.
+11. Soft-gradient modern art.
+12. A striking subject with open space around the clock.
+
+These are examples of the desired collection, not a requirement to use generic placeholders.
+
+Where actual bundled artwork is available, use it.
+
+Create or include properly prepared original artwork assets wherever the environment allows.
+
+Each depth wallpaper must have the appropriate foreground and background layers when advertised as a genuine depth wallpaper.
+
+Do not populate the library with twelve copies of the same image.
+
+Do not show blank cards, broken image URLs, or generic colored rectangles in place of actual artwork.
+
+If the available image-generation or asset tools cannot provide the entire collection automatically, implement the wallpaper-library architecture correctly, use the genuine available assets, and clearly report any missing artwork. Never claim that nonexistent assets have been created.
+
+2.1 Wallpaper preview screen
+
+Create a beautiful preview screen for each wallpaper.
+
+The preview should show:
+
+- The actual background image.
+- The actual transparent foreground layer, where available.
+- A large clock rendered between the layers.
+- A realistic preview of the launcher wallpaper region.
+- The wallpaper or theme name.
+- A clearly labeled Apply Wallpaper button.
+- A Back button.
+- An indicator showing which wallpaper is currently selected.
+
+Use the same rendering engine for the preview and the real home screen. Do not create a misleading preview with a different visual implementation.
+
+When the user applies a wallpaper, update the home screen immediately.
+
+Persist the selection across application restarts.
+
+2.2 Wallpaper metadata
+
+Use a maintainable data model for each built-in depth wallpaper.
+
+Store or derive information such as:
+
+- Wallpaper identifier.
+- Wallpaper display name.
+- Background image resource.
+- Foreground transparent image resource.
+- Clock horizontal alignment.
+- Clock vertical position.
+- Clock size.
+- Foreground subject alignment.
+- Foreground scaling.
+- Optional date visibility.
+- Appropriate cropping parameters.
+
+Do not hardcode the complete logic separately for each wallpaper.
+
+Create reusable components so that adding future wallpapers does not require rewriting the entire home screen.
+
+---
+
+3. CUSTOM WALLPAPERS AND DEPTH WALLPAPER STUDIO
+
+Create a fully functional custom wallpaper system.
+
+Users must be able to:
+
+- Choose a wallpaper from the built-in library.
+- Import their own background image.
+- Preview it before applying.
+- Apply it as the main home-screen background.
+- Preserve it after restarting the app.
+- Restore the default wallpaper.
+- Adjust cropping and positioning.
+- Adjust background dimming.
+- Choose a suitable clock position.
+- Choose a clock font style.
+- Change the clock size.
+- Toggle the date.
+
+Use Android's appropriate document or image picker. Persist file access where the platform allows it.
+
+Handle unavailable files and revoked URI permissions gracefully.
+
+Do not request unnecessary storage permissions.
+
+3.1 Custom depth layers
+
+Add an optional "Create Depth Wallpaper" or "Depth Wallpaper Studio" feature.
+
+When creating a custom depth wallpaper, support importing:
+
+1. A background image.
+2. A separate transparent foreground PNG/WebP.
+
+Allow the user to preview the two layers with the real clock between them.
+
+Provide controls to adjust the foreground subject's position and size.
+
+Where a genuine local subject-segmentation feature is already available or can be implemented reasonably, offer it as an optional method of generating the foreground layer from a single photograph.
+
+However, do not make an unverified automatic cutout feature a requirement for the rest of the launcher.
+
+If a user supplies only a normal flattened image and no reliable segmentation implementation is available, provide the normal wallpaper option and clearly explain why the true depth effect cannot be produced automatically for that image.
+
+Never display a nonfunctional Generate Depth button.
+
+3.2 Persistent storage
+
+Use the existing project's storage architecture where suitable.
+
+Otherwise, use an appropriate mechanism such as DataStore for preferences and a reliable approach for persisted image URIs.
+
+Persist:
+
+- Selected wallpaper.
+- Selected depth theme.
+- Clock position and style.
+- Wallpaper scaling and cropping.
+- Dimming preference.
+- User's selected theme.
+- User's accent color.
+- User's preferred home layout.
+
+When an imported wallpaper becomes unavailable, gracefully fall back to a valid built-in wallpaper rather than crashing.
+
+---
+
+4. HOME SCREEN LAYOUT: WALLPAPER AT THE TOP, CONTENT BELOW
+
+The top of the home screen must be dominated by the depth-effect wallpaper and oversized clock.
+
+Below the wallpaper region, create beautiful, clearly separated rows of application and entertainment cards.
+
+A suggested widescreen layout is:
+
+TOP REGION:
+
+- Premium navigation header.
+- Large depth wallpaper.
+- Oversized time behind the foreground subject.
+- Optional date.
+- Subtle background transition into the content area.
+
+MIDDLE REGION:
+
+- Favorite applications.
+- Recently used applications.
+- Featured entertainment banner.
+- Movie and discovery cards.
+
+LOWER REGION:
+
+- All applications or additional application categories.
+- Games, if supported.
+- Custom collections.
+- Additional recommendation rows.
+
+Keep the layout balanced and uncluttered.
+
+The foreground subject must not cover the app icons, button labels, or essential navigation controls.
+
+Make the wallpaper region tall enough to produce an impressive depth effect, but not so tall that users must scroll excessively to reach their applications.
+
+Implement a responsive layout for 1080p and 4K televisions.
+
+Use appropriate sizing rather than hardcoded screen-pixel values.
+
+Support different TV safe areas where necessary.
+
+The top navigation must remain readable against the wallpaper.
+
+Use a subtle gradient or an appropriate background panel when necessary.
+
+When focus moves between application rows, preserve a clear visual relationship between the selected item and the overall layout.
+
+---
+
+5. PREMIUM CINEMATIC MOVIE AND ENTERTAINMENT INTERFACE
+
+Add the following optional but useful home-screen sections:
+
+- Featured.
+- Favorite Apps.
+- Recently Used.
+- Movies & Entertainment.
+- Discover.
+- Games.
+- Custom Collections.
+
+Create a beautiful cinematic hero banner using genuine available artwork or original assets.
+
+The hero section should have:
+
+- Large artwork.
+- A readable title.
+- Optional description.
+- Smooth transitions.
+- Appropriate gradient overlays.
+- Beautiful, clearly labeled action buttons.
+- Correct image cropping.
+
+Create horizontal content rows with suitable artwork formats. Movie posters, wide banners, and application icons must not all use the same shape.
+
+Cards must enlarge subtly on focus and display a clear selection indicator.
+
+Do not falsely advertise actual streaming availability without a working integration.
+
+Distinguish genuine installed application shortcuts from demonstration content.
+
+Do not claim that Netflix, Prime Video, Disney+, or another service is streaming a movie just because a poster is displayed.
+
+Do not introduce fake APIs or hardcoded live movie catalogs.
+
+The launcher should remain attractive when the internet is unavailable.
+
+---
+
+6. COMPLETE INSTALLED APPLICATION DISCOVERY
+
+Implement real installed-app discovery using PackageManager and appropriate Android package visibility rules.
+
+Display real applications, their real icons, and their real names.
+
+Provide:
+
+- Beautiful app cards.
+- Readable labels.
+- A dedicated Apps screen.
+- A responsive application grid.
+- Favorites.
+- Recently used applications where feasible.
+- Functional search.
+- Appropriate empty states.
+- Graceful handling of unavailable application launch intents.
+
+The application names must never overlap neighboring icons or disappear behind other components.
+
+Long names should be handled with sensible two-line labels or appropriate ellipsizing.
+
+Use suitable icon sizing for TV viewing.
+
+Keep application cards visually consistent.
+
+Allow the user to select an app with the remote control and launch it.
+
+Do not use fake sample applications in place of actual installed applications.
+
+Do not duplicate application cards unnecessarily.
+
+Use the existing launcher architecture and maintain efficient icon caching where appropriate.
+
+---
+
+7. COMPLETE PERSONALIZATION AND THEME SYSTEM
+
+Create a professional Settings and Personalization interface.
+
+Include:
+
+Wallpaper
+
+- Built-in wallpapers.
+- Built-in depth wallpapers.
+- Wallpaper preview.
+- Apply wallpaper.
+- Custom image selection.
+- Custom depth layers.
+- Restore default wallpaper.
+
+Clock
+
+- Clock visibility.
+- Clock size.
+- Clock font style.
+- Clock color.
+- Date visibility.
+- 12-hour or 24-hour format where appropriate.
+- Clock position.
+- Shadow or contrast preference.
+
+Appearance
+
+- Dark cinematic theme.
+- Midnight blue theme.
+- Purple futuristic theme.
+- Minimalist black theme.
+- Light or dark variant where appropriate.
+- Accent-color selection.
+- Background dimming.
+- Optional glass appearance.
+- Card size preferences.
+
+Home Screen
+
+- Toggle content rows.
+- Select favorite applications.
+- Reorder supported rows.
+- Choose the default home layout.
+- Change featured wallpaper.
+- Restore default layout.
+
+Implement real behavior behind every supported control.
+
+Save the preferences persistently.
+
+Do not create decorative switches that do nothing.
+
+Keep the design consistent across Home, Apps, Settings, Wallpaper Preview, and Depth Wallpaper Studio.
+
+---
+
+8. PROFESSIONAL BUTTONS, ICONS, AND TYPOGRAPHY
+
+Completely fix the existing readability problems.
+
+Use a consistent design system for all buttons and controls.
+
+Requirements:
+
+- Large and legible labels.
+- High-contrast text.
+- Suitable font sizing for viewing from a couch.
+- Consistent spacing.
+- Correct icon alignment.
+- Clear primary and secondary actions.
+- Distinct selected and unselected states.
+- Attractive focus animations.
+- No labels clipped by parent layouts.
+- No text overlapping icons.
+- No tiny, low-contrast labels.
+- No generic unstyled buttons.
+- No unnecessary icon-only controls.
+
+Use a professional modern typeface and clear typographic hierarchy.
+
+The app must look like a purpose-built TV operating-system interface, not a mobile app displayed on a larger screen.
+
+---
+
+9. ANDROID TV REMOTE CONTROL SUPPORT
+
+Implement proper TV remote navigation for the entire application.
+
+Support the D-pad:
+
+- Up.
+- Down.
+- Left.
+- Right.
+- OK or Enter.
+- Back.
+
+Use an intentional focus graph across:
+
+- Navigation tabs.
+- Wallpaper controls.
+- Featured banners.
+- App cards.
+- Movie cards.
+- Settings options.
+- Dialogs.
+
+The focus must not disappear unexpectedly.
+
+Provide a visible focus state using subtle scaling, a clear outline, shadow, or an accent glow.
+
+Preserve sensible focus restoration when returning from another application or screen.
+
+Every essential action must be accessible using the remote without a mouse or touchscreen.
+
+Where text input is needed, support the available TV keyboard.
+
+Prevent focus traps, overlapping selection states, and accidental activation during navigation.
+
+Do not use animations that make the interface difficult to control.
+
+---
+
+10. REAL ANDROID HOME LAUNCHER INTEGRATION
+
+This must be a genuine launcher, not simply a home-screen design inside an ordinary app.
+
+Inspect the existing AndroidManifest.xml and implement the appropriate activity configuration when necessary.
+
+Ensure the application has the appropriate intent filters for:
+
+- android.intent.action.MAIN
+- android.intent.category.HOME
+- android.intent.category.DEFAULT
+
+Also implement the appropriate TV application launch category:
+
+- android.intent.category.LEANBACK_LAUNCHER
+
+Use appropriate exported activity configuration, launcher icons, TV banner resources, and Android TV compatibility declarations.
+
+Ensure the application can appear as a selectable Home app on compatible Android TV devices.
+
+Do not use root access, undocumented system APIs, or unsupported tricks to force the launcher to become the default.
+
+Do not promise permanent default-launcher behavior on all TV models.
+
+Test application startup and normal system navigation where the available environment allows it.
+
+Keep the user able to return to the original launcher through the device's supported settings.
+
+---
+
+11. PERFORMANCE AND RELIABILITY
+
+Depth effects must not make the launcher slow.
+
+Implement the rendering efficiently.
+
+Requirements:
+
+- Reuse image-loading infrastructure.
+- Cache suitable image resources.
+- Avoid decoding enormous images unnecessarily.
+- Use correct aspect ratios.
+- Use efficient lazy lists and grids.
+- Avoid excessive recomposition.
+- Avoid unnecessary continuous animations.
+- Avoid expensive real-time blur on low-powered devices.
+- Update the clock at appropriate intervals rather than continuously redrawing the entire UI.
+- Avoid loading every movie image at once.
+- Avoid unnecessary background services.
+- Do not require network access for the main launcher.
+- Handle missing images and unavailable resources gracefully.
+
+The launcher must remain responsive on ordinary Android TV boxes as well as higher-powered TVs.
+
+Use fallback effects when a device cannot support an expensive visual effect smoothly.
+
+Maintain readable text and a good frame rate rather than prioritizing unnecessary visual effects over performance.
+
+---
+
+12. IMPLEMENTATION AND PROJECT RULES
+
+Inspect the current project's actual source code and file structure before editing anything.
+
+Then implement the redesign directly.
+
+Use native Kotlin and Jetpack Compose if that matches the existing project.
+
+Do not replace the app with a WebView-based mockup.
+
+Do not merely describe what should be implemented.
+
+Modify the actual screens, components, resources, theme files, wallpaper data structures, navigation, and manifest where appropriate.
+
+Preserve the existing package name and application ID.
+
+Preserve the existing dependency and build configuration unless a genuine, necessary incompatibility is discovered.
+
+Do not upgrade Gradle or the Android Gradle Plugin merely for convenience.
+
+Do not modify, delete, or replace the existing GitHub Actions workflow used for APK generation and publishing.
+
+Do not introduce fake configuration files, API keys, placeholder credentials, or mandatory cloud services.
+
+Keep the implementation organized and maintainable.
+
+Create reusable components for the wallpaper renderer, clock, app cards, focus behavior, featured banners, and preference management.
+
+Use meaningful names and maintainable data models.
+
+Avoid duplicating entire screens to implement similar features.
+
+---
+
+13. BUILD VERIFICATION AND QUALITY ASSURANCE
+
+After implementation, check the following:
+
+1. The complete home screen is visually polished.
+2. The depth wallpaper background renders properly.
+3. The clock appears between the background and transparent foreground subject.
+4. The subject genuinely overlaps the time.
+5. The built-in depth wallpaper library contains valid paired assets.
+6. The wallpaper preview uses the real renderer.
+7. Applying a wallpaper updates the home screen.
+8. Wallpaper choices persist across restarts.
+9. Custom normal wallpapers work.
+10. Custom foreground and background layers work where supported.
+11. Clock settings have real effects.
+12. Application icons and labels are aligned correctly.
+13. Installed application discovery works.
+14. Application launch actions work.
+15. The Apps screen is usable.
+16. Movie and content cards have correct image proportions.
+17. The remote navigates all essential controls.
+18. Settings genuinely change the relevant preferences.
+19. There are no obvious overlapping or clipped controls.
+20. There are no broken image resources.
+21. The Android Home launcher manifest configuration is correct.
+22. Existing GitHub Actions files remain unchanged.
+23. The project builds successfully when the build environment permits it.
+
+If the build fails, investigate the actual error and fix relevant application code.
+
+Do not conceal compilation errors.
+
+Do not claim to have tested the interface on a real TV unless a real TV test was performed.
+
+If an emulator, screenshot capture tool, or actual Android build environment is available, use it to verify the results.
+
+If testing is not possible, clearly identify what remains unverified.
+
+---
+
+14. FINAL IMPLEMENTATION REQUIREMENTS
+
+Do not finish by simply saying that the launcher has been improved.
+
+Provide a concise but accurate final report stating:
+
+- Which parts of the application were actually modified.
+- Which new home-screen features were implemented.
+- Whether the built-in depth wallpaper system is functional.
+- Whether the clock-behind-foreground effect is real.
+- Whether custom wallpaper import works.
+- Whether custom depth layers can be imported.
+- Whether app discovery and launching work.
+- Whether TV remote navigation has been verified.
+- Whether the project build succeeded.
+- Whether Android TV device-specific behavior still requires testing.
+- Any features that remain incomplete.
+
+Do not claim that the application is production-ready if the relevant tests have not been performed.
+
+FINAL DIRECTIVE
+
+Now inspect the existing project and carry out the complete redesign.
+
+The visual priority is the cinematic depth wallpaper with a large clock positioned behind the foreground subject, followed by beautifully organized installed applications and cinematic entertainment recommendations.
+
+The functional priority is genuine wallpaper customization, real app launching, complete TV remote navigation, persistent preferences, and valid Android Home launcher integration.
+
+The result must be visually impressive, technically maintainable, and genuinely usable.
+
+Do not settle for an ordinary app grid or a static design mockup.
+
+Implement the best complete version supported by the current project and tools.

@@ -1,0 +1,6 @@
+{
+  "name": "Aura TV",
+  "description": "Apple TV inspired modern launcher for Android TV with dynamic Top Shelf, custom categories, aerial 4K wallpapers, and PIN protection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
